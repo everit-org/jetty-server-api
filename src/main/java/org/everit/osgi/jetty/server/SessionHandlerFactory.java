@@ -15,17 +15,17 @@
  */
 package org.everit.osgi.jetty.server;
 
-import org.eclipse.jetty.security.SecurityHandler;
+import org.eclipse.jetty.server.session.SessionHandler;
 
 /**
- * Factory interface to create {@link SecurityHandler} instances.
+ * Factory instance to created pre-configured {@link SessionHandler}s.
  */
-public interface SecurityHandlerFactory {
+public interface SessionHandlerFactory {
 
   /**
-   * Creates a new {@link SecurityHandler}.
-   * 
-   * @return The freshly created {@link SecurityHandler}.
+   * Creates a new {@link SessionHandler}.
+   *
+   * @return A freshly instantiated and pre-configured {@link SessionHandler}.
    */
-  SecurityHandler createSecurityHandler();
+  SessionHandler createSessionHandler();
 }

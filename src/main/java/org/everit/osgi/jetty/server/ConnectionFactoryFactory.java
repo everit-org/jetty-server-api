@@ -15,17 +15,18 @@
  */
 package org.everit.osgi.jetty.server;
 
-import org.eclipse.jetty.security.SecurityHandler;
+import org.eclipse.jetty.server.ConnectionFactory;
 
 /**
- * Factory interface to create {@link SecurityHandler} instances.
+ * Factory class to create pre-configured {@link ConnectionFactory} instances.
  */
-public interface SecurityHandlerFactory {
+public interface ConnectionFactoryFactory {
 
   /**
-   * Creates a new {@link SecurityHandler}.
-   * 
-   * @return The freshly created {@link SecurityHandler}.
+   * Creates a new pre-configured {@link ConnectionFactory}.
+   *
+   * @return a new pre-configured {@link ConnectionFactory}.
    */
-  SecurityHandler createSecurityHandler();
+  ConnectionFactory createConnectionFactory();
+
 }

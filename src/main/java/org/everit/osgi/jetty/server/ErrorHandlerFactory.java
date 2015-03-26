@@ -15,21 +15,17 @@
  */
 package org.everit.osgi.jetty.server;
 
-import org.eclipse.jetty.server.Handler;
-import org.eclipse.jetty.server.SessionManager;
+import org.eclipse.jetty.server.handler.ErrorHandler;
 
 /**
- * Factory instance to created pre-configured {@link SessionManager}s.
+ * Factory instance to created pre-configured {@link ErrorHandler}s.
  */
-public interface SessionManagerFactory {
+public interface ErrorHandlerFactory {
 
   /**
-   * Creates a new {@link SessionManager}.
+   * Creates a new {@link ErrorHandler}.
    *
-   * @param parentHandler
-   *          The {@link Handler} (e.g.: {@link org.eclipse.jetty.server.session.SessionHandler}) in
-   *          which the {@link SessionManager} will be used.
-   * @return A freshly instantiated and pre-configured {@link SessionManager}.
+   * @return A freshly instantiated and pre-configured {@link ErrorHandler}.
    */
-  SessionManager createSessionManager(Handler parentHandler);
+  ErrorHandler createErrorHandler();
 }
