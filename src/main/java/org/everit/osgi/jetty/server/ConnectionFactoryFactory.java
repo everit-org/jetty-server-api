@@ -25,8 +25,20 @@ public interface ConnectionFactoryFactory {
   /**
    * Creates a new pre-configured {@link ConnectionFactory}.
    *
+   * @param nextProtocol
+   *          The protocol of the {@link ConnectionFactory} that follows the one created by this
+   *          factory in the queue.
+   *
    * @return a new pre-configured {@link ConnectionFactory}.
    */
-  ConnectionFactory createConnectionFactory();
+  ConnectionFactory createConnectionFactory(String nextProtocol);
+
+  /**
+   * A string representing the primary protocol name of the {@link ConnectionFactory}s created by
+   * this factory.
+   *
+   * @return the primary protocol name.
+   */
+  String getProtocol();
 
 }
