@@ -15,22 +15,14 @@
  */
 package org.everit.osgi.jetty.server;
 
-import org.eclipse.jetty.server.ConnectionFactory;
-
 /**
- * Factory class to create pre-configured {@link ConnectionFactory} instances.
+ * All {@link org.eclipse.jetty.server.ConnectionFactory} instances should implement this interface
+ * to let the ServerConnector component updating the connection factory references dynamically.
  */
-public interface ConnectionFactoryFactory {
+public interface ReferencedEndPointsCloseable {
 
   /**
-   * Creates a new pre-configured {@link ConnectionFactory}.
-   *
-   * @param nextProtocol
-   *          The protocol of the {@link ConnectionFactory} that follows the one created by this
-   *          factory in the queue.
-   *
-   * @return a new pre-configured {@link ConnectionFactory}.
+   * Close all EndPoints that might be in use.
    */
-  ConnectionFactory createConnectionFactory(String nextProtocol);
-
+  void closeReferencedEndpoints();
 }
