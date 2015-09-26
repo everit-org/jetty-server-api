@@ -13,16 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
+package org.everit.jetty.server;
+
+import org.eclipse.jetty.server.ConnectionFactory;
 
 /**
- * All {@link org.eclipse.jetty.server.ConnectionFactory} instances should implement this interface
- * to let the ServerConnector component updating the connection factory references dynamically.
+ * Factory class to create pre-configured {@link ConnectionFactory} instances.
  */
-public interface ReferencedEndPointsCloseable {
+public interface ConnectionFactoryFactory {
 
   /**
-   * Close all EndPoints that might be in use.
+   * Creates a new pre-configured {@link ConnectionFactory}.
+   *
+   * @param nextProtocol
+   *          The protocol of the {@link ConnectionFactory} that follows the one created by this
+   *          factory in the queue.
+   *
+   * @return a new pre-configured {@link ConnectionFactory}.
    */
-  void closeReferencedEndpoints();
+  ConnectionFactory createConnectionFactory(String nextProtocol);
 }

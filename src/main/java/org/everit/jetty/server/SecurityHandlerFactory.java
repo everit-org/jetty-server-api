@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
+package org.everit.jetty.server;
 
-import org.eclipse.jetty.server.handler.ErrorHandler;
+import org.eclipse.jetty.security.SecurityHandler;
 
 /**
- * Factory instance to created pre-configured {@link ErrorHandler}s.
+ * Factory interface to create {@link SecurityHandler} instances.
  */
-public interface ErrorHandlerFactory {
+public interface SecurityHandlerFactory {
 
   /**
-   * Creates a new {@link ErrorHandler}.
+   * Creates a new {@link SecurityHandler}.
    *
-   * @return A freshly instantiated and pre-configured {@link ErrorHandler}.
+   * @return The freshly created {@link SecurityHandler}.
    */
-  ErrorHandler createErrorHandler();
+  SecurityHandler createSecurityHandler();
 }
