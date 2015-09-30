@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
+package org.everit.jetty.server;
 
 import org.eclipse.jetty.server.NetworkConnector;
 import org.eclipse.jetty.server.Server;
@@ -36,5 +36,4 @@ public interface NetworkConnectorFactory {
    * @return The created network connector instance.
    */
   NetworkConnector createNetworkConnector(Server server, String host, int port);
-
 }

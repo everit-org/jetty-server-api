@@ -13,24 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
+package org.everit.jetty.server;
 
-import org.eclipse.jetty.server.ConnectionFactory;
+import org.eclipse.jetty.server.session.SessionHandler;
 
 /**
- * Factory class to create pre-configured {@link ConnectionFactory} instances.
+ * Factory instance to created pre-configured {@link SessionHandler}s.
  */
-public interface ConnectionFactoryFactory {
+public interface SessionHandlerFactory {
 
   /**
-   * Creates a new pre-configured {@link ConnectionFactory}.
+   * Creates a new {@link SessionHandler}.
    *
-   * @param nextProtocol
-   *          The protocol of the {@link ConnectionFactory} that follows the one created by this
-   *          factory in the queue.
-   *
-   * @return a new pre-configured {@link ConnectionFactory}.
+   * @return A freshly instantiated and pre-configured {@link SessionHandler}.
    */
-  ConnectionFactory createConnectionFactory(String nextProtocol);
-
+  SessionHandler createSessionHandler();
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
+package org.everit.jetty.server;
 
 import org.eclipse.jetty.server.HandlerContainer;
 import org.eclipse.jetty.servlet.ServletContextHandler;

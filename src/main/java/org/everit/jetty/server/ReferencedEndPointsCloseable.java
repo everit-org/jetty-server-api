@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.jetty.server;
-
-import org.eclipse.jetty.server.session.SessionHandler;
+package org.everit.jetty.server;
 
 /**
- * Factory instance to created pre-configured {@link SessionHandler}s.
+ * All {@link org.eclipse.jetty.server.ConnectionFactory} instances should implement this interface
+ * to let the ServerConnector component updating the connection factory references dynamically.
  */
-public interface SessionHandlerFactory {
+public interface ReferencedEndPointsCloseable {
 
   /**
-   * Creates a new {@link SessionHandler}.
-   *
-   * @return A freshly instantiated and pre-configured {@link SessionHandler}.
+   * Close all EndPoints that might be in use.
    */
-  SessionHandler createSessionHandler();
+  void closeReferencedEndpoints();
 }
